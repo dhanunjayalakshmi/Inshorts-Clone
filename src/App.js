@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import Footer from "./components/Footer/Footer";
+import NavInshorts from "./components/NavInshorts";
+import NewsContent from "./components/NewsContent/NewsContent";
+import apikey from "./data/config";
 
-function App() {
+const App = () => {
+  const [category, setCategory] = useState("general");
+  const [newsArray, setNewsArray] = useState([]);
+  const [newsResults, setNewsResults] = useState();
+
+  const newsApi = async () => {
+    try {
+      const news = await axios.get(
+        `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apikey}&category=${category}`
+      );
+      setNewsArray(news?.data?.articles);
+      setNewsResults(news?.data?.totalResults);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    newsApi();
+  }, [newsResults, category]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavInshorts setCategory={setCategory} />
+      <NewsContent />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
