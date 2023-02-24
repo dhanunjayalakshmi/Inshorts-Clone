@@ -12,7 +12,7 @@ const Footer = () => {
       </span>
       <hr style={{ width: "90%" }} />
       <div className="iconContainer">
-        <a href="#">
+        <a href="https://www.linkedin.com/in/dhanunjaya-lakshmi-46a32876/">
           <i class="fa-brands fa-square-instagram fa-2x"></i>
         </a>
         <a href="https://www.linkedin.com/in/dhanunjaya-lakshmi-46a32876/">
