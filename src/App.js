@@ -29,7 +29,7 @@ const App = () => {
   return (
     <div>
       <NavInshorts setCategory={setCategory} />
-      <NewsContent />
+      <NewsContent newsArray={newsArray} newsResults={newsResults} />
       <Footer />
     </div>
   );
