@@ -23,7 +23,7 @@ const NewsCard = ({ newsItem }) => {
           <span className="title">{newsItem?.title}</span>
           <br />
           <span className="author">
-            <a href={newsItem?.url} target="_blank">
+            <a href={newsItem?.url}>
               <b>short</b>
             </a>
             <span className="muted">
@@ -40,7 +40,7 @@ const NewsCard = ({ newsItem }) => {
           <div className="description">{newsItem?.description}</div>
           <span className="readmore">
             read more at{" "}
-            <a href={newsItem?.url} target="_blank" className="source">
+            <a href={newsItem?.url} className="source">
               <b>{newsItem?.source?.name}</b>
             </a>
           </span>
