@@ -5,7 +5,7 @@ import "./NewsContent.css";
 
 const NewsContent = ({ newsArray, newsResults, loadMore, setLoadMore }) => {
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="lg">
       <div className="content">
         <div className="downloadMessage">
           <span className="downloadText">

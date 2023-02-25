@@ -7,7 +7,7 @@
 }
 
 .downloadMessage {
-  width: 95%;
+  width: 100%;
   display: flex;
   align-items: center;
   background: #f44336;
@@ -15,8 +15,8 @@
   padding: 0 40px;
   margin: 20px 0 35px 0;
   color: white;
-  font-size: 12px;
-  font-weight: 300;
+  font-size: 20px;
+  font-weight: 500;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -30,7 +30,7 @@
   border: none;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   padding: 7px 25px;
-  font-size: 13px;
+  font-size: 16px;
   margin-top: -20px;
 }
 
