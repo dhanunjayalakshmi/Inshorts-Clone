@@ -5,3 +5,8 @@ a:active {
   text-decoration: none;
   color: inherit;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
