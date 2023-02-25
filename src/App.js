@@ -33,6 +33,7 @@ const App = () => {
 
   useEffect(() => {
     newsApi();
+    window.scrollTo(0, 0);
     // eslint-disable-next-line
   }, [newsResults, category, loadMore]);
 
