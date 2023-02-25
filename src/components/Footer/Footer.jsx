@@ -13,13 +13,13 @@ const Footer = () => {
       <hr style={{ width: "90%" }} />
       <div className="iconContainer">
         <a href="https://www.linkedin.com/in/dhanunjaya-lakshmi-46a32876/">
-          <i class="fa-brands fa-square-instagram fa-2x"></i>
+          <i class="fa-brands fa-square-instagram"></i>
         </a>
         <a href="https://www.linkedin.com/in/dhanunjaya-lakshmi-46a32876/">
-          <i class="fa-brands fa-linkedin fa-2x"></i>
+          <i class="fa-brands fa-linkedin"></i>
         </a>
         <a href="https://github.com/dhanunjayalakshmi">
-          <i class="fa-brands fa-square-github fa-2x"></i>
+          <i class="fa-brands fa-square-github"></i>
         </a>
       </div>
     </div>

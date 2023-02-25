@@ -13,11 +13,18 @@ const App = () => {
 
   const newsApi = async () => {
     try {
-      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+      // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+      // const news = await axios.get(
+      //   `https://${proxyUrl}newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_API_KEY}&category=${category}&pageSize=${loadMore}`
+      // );
+      // const news = await axios.get(
+      //   `https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_API_KEY}&category=${category}&pageSize=${loadMore}`
+      // );
+
       const news = await axios.get(
-        `https://${proxyUrl}newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_API_KEY}&category=${category}&pageSize=${loadMore}`
+        `https://saurav.tech/NewsAPI/top-headlines/category/${category}/in.json`
       );
-      setNewsArray(news?.data?.articles);
+      setNewsArray(news?.data?.articles?.slice(0, loadMore));
       setNewsResults(news?.data?.totalResults);
     } catch (error) {
       console.log(error);
@@ -30,7 +37,7 @@ const App = () => {
   }, [newsResults, category, loadMore]);
 
   return (
-    <div>
+    <div className="App">
       <NavInshorts setCategory={setCategory} />
       <NewsContent
         loadMore={loadMore}

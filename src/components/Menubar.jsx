@@ -45,13 +45,15 @@ export default function TemporaryDrawer({ setCategory }) {
       </List>
       <Divider />
       <List>
-        {categories.map((text, index) => (
+        {categories.map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton
               style={{ height: 40, borderRadius: 3 }}
               onClick={() => setCategory(text)}
             >
-              <ListItemText primary={text} />
+              <ListItemText
+                primary={text.charAt(0).toUpperCase() + text.slice(1)}
+              />
             </ListItemButton>
           </ListItem>
         ))}
