@@ -38,7 +38,7 @@ export default function TemporaryDrawer({ setCategory }) {
   const handleClick = (text) => {
     setCategory(text);
     setCategoryText(text);
-    setBgColor("grey");
+    setBgColor("#808080c4");
   };
 
   const list = (anchor) => (
@@ -60,13 +60,14 @@ export default function TemporaryDrawer({ setCategory }) {
                 height: 40,
                 borderRadius: 3,
               }}
-              onClick={(text) => handleClick(text)}
             >
               <ListItemText
                 style={{
+                  paddingLeft: 20,
                   backgroundColor:
                     categoryText === text && bgColor ? bgColor : "",
                 }}
+                onClick={() => handleClick(text)}
                 primary={text.charAt(0).toUpperCase() + text.slice(1)}
               />
             </ListItemButton>
