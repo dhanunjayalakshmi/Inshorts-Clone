@@ -16,7 +16,6 @@ export default function TemporaryDrawer({ setCategory }) {
     left: false,
   });
 
-  const [bgColor, setBgColor] = React.useState("");
   const [categoryText, setCategoryText] = React.useState("general");
 
   const darkTheme = createTheme({
@@ -38,7 +37,6 @@ export default function TemporaryDrawer({ setCategory }) {
   const handleClick = (text) => {
     setCategory(text);
     setCategoryText(text);
-    setBgColor("#808080c4");
   };
 
   const list = (anchor) => (
@@ -64,8 +62,7 @@ export default function TemporaryDrawer({ setCategory }) {
               <ListItemText
                 style={{
                   paddingLeft: 20,
-                  backgroundColor:
-                    categoryText === text && bgColor ? bgColor : "",
+                  backgroundColor: categoryText === text ? "#808080c4" : "",
                 }}
                 onClick={() => handleClick(text)}
                 primary={text.charAt(0).toUpperCase() + text.slice(1)}
