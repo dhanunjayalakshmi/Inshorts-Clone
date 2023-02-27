@@ -26,6 +26,9 @@ const App = () => {
       );
       setNewsArray(news?.data?.articles?.slice(0, loadMore));
       setNewsResults(news?.data?.totalResults);
+      // if (loadMore <= 20) {
+      //   window.scrollTo(0, 0);
+      // }
     } catch (error) {
       console.log(error);
     }
@@ -33,9 +36,16 @@ const App = () => {
 
   useEffect(() => {
     newsApi();
+    setLoadMore(20);
     window.scrollTo(0, 0);
     // eslint-disable-next-line
-  }, [newsResults, category, loadMore]);
+  }, [newsResults, category]);
+
+  useEffect(() => {
+    newsApi();
+    if (loadMore <= 20) window.scrollTo(0, 0);
+    // eslint-disable-next-line
+  }, [loadMore]);
 
   return (
     <div className="App">

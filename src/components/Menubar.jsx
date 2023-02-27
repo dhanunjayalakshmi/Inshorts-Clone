@@ -16,6 +16,9 @@ export default function TemporaryDrawer({ setCategory }) {
     left: false,
   });
 
+  const [bgColor, setBgColor] = React.useState("");
+  const [categoryText, setCategoryText] = React.useState("general");
+
   const darkTheme = createTheme({
     palette: {
       mode: "dark",
@@ -29,8 +32,13 @@ export default function TemporaryDrawer({ setCategory }) {
     ) {
       return;
     }
-
     setState({ ...state, [anchor]: open });
+  };
+
+  const handleClick = (text) => {
+    setCategory(text);
+    setCategoryText(text);
+    setBgColor("grey");
   };
 
   const list = (anchor) => (
@@ -48,10 +56,17 @@ export default function TemporaryDrawer({ setCategory }) {
         {categories.map((text) => (
           <ListItem key={text} disablePadding>
             <ListItemButton
-              style={{ height: 40, borderRadius: 3 }}
-              onClick={() => setCategory(text)}
+              style={{
+                height: 40,
+                borderRadius: 3,
+              }}
+              onClick={(text) => handleClick(text)}
             >
               <ListItemText
+                style={{
+                  backgroundColor:
+                    categoryText === text && bgColor ? bgColor : "",
+                }}
                 primary={text.charAt(0).toUpperCase() + text.slice(1)}
               />
             </ListItemButton>
